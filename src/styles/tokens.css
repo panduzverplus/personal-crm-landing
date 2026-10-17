@@ -1,0 +1,134 @@
+/*
+ * Design tokens from design/README.md.
+ * Colors, fonts, type scale, radii and spacing are defined only here;
+ * components use the Tailwind utilities generated from these variables.
+ */
+
+@theme {
+  /* Only the design palette is available, Tailwind's default colors are dropped */
+  --color-*: initial;
+
+  --color-peach: #e3c1aa;
+  --color-ink: #262626;
+  --color-accent: oklch(0.62 0.22 28);
+  --color-accent-on-dark: oklch(0.72 0.18 28);
+  --color-search: #eef0ea;
+  --color-search-icon: #1b2a22;
+  --color-avatar: #ca885b;
+  --color-avatar-muted: #bf8156;
+  --color-skeleton: #d3a484;
+  --color-meta: #060606;
+  --color-card-border: #000000;
+
+  /* Font files and the --font-geologica etc. variables come from Astro Fonts (astro.config.mjs) */
+  --font-sans: var(--font-geologica);
+  --font-display: var(--font-unbounded);
+  --font-ui: var(--font-onest);
+  --font-mono: var(--font-ibm-plex-mono);
+
+  /* Spacing unit is 1px, so utilities read as pixels from the design: p-22 = 22px */
+  --spacing: 1px;
+
+  --radius-card: 24px;
+  --radius-field: 14px;
+
+  /* Type scale, mobile values. Desktop values are set below. */
+
+  /* "Чигабугадага" in the header and footer */
+  --text-logo: 15px;
+  --text-logo--letter-spacing: -0.01em;
+
+  /* "ЛИЧНЫЕ КОНТАКТЫ" */
+  --text-label: 11px;
+  --text-label--letter-spacing: 0.06em;
+
+  /* Big letter "Ч". Below the 390px design width it shrinks with the screen so the logo line fits. */
+  --text-letter: min(150px, 38.47vw);
+  --text-letter--line-height: 0.8;
+  --text-letter--letter-spacing: -0.06em;
+
+  /* "игабугадага" next to the big letter, shrinks like the letter */
+  --text-wordmark: min(34px, 8.72vw);
+  --text-wordmark--line-height: 1;
+  --text-wordmark--letter-spacing: -0.01em;
+
+  /* H1 and the final H2 */
+  --text-display: 50px;
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.045em;
+
+  /* Section headings */
+  --text-h2: 34px;
+  --text-h2--line-height: 1;
+  --text-h2--letter-spacing: -0.04em;
+
+  /* First screen subtitle */
+  --text-lead: 16px;
+  --text-lead--line-height: 1.42;
+
+  --text-step-number: 44px;
+  --text-step-number--line-height: 0.85;
+  --text-step-number--letter-spacing: -0.05em;
+
+  --text-step-title: 22px;
+  --text-step-title--letter-spacing: -0.02em;
+
+  --text-step-text: 16px;
+  --text-step-text--line-height: 1.42;
+
+  /* Cards in the "Удобно" section */
+  --text-feature: 18px;
+  --text-feature--line-height: 1.35;
+
+  --text-chip: 14px;
+
+  --text-button: 17px;
+  --text-button-arrow: 18px;
+  --text-button-sm: 15px;
+  --text-button-sm-arrow: 14px;
+
+  /* Product preview card */
+  --text-preview: 15px;
+  --text-preview-note: 13px;
+  --text-preview-initials: 14px;
+}
+
+/* Desktop values */
+:root {
+  @variant md {
+    --text-logo: 18px;
+    --text-label: 16px;
+
+    --text-letter: clamp(140px, 18vw, 260px);
+
+    --text-wordmark: clamp(32px, 4.2vw, 60px);
+    --text-wordmark--letter-spacing: -0.02em;
+
+    --text-display: clamp(56px, 7.2vw, 104px);
+    --text-display--line-height: 0.95;
+    --text-display--letter-spacing: -0.05em;
+
+    --text-h2: 56px;
+    --text-h2--letter-spacing: -0.045em;
+
+    --text-lead: 20px;
+
+    --text-step-number: 96px;
+    --text-step-title: 28px;
+    --text-step-text: 18px;
+
+    --text-feature: 24px;
+    --text-feature--line-height: 1.3;
+
+    --text-chip: 15px;
+
+    --text-button: 19px;
+    --text-button-arrow: 20px;
+
+    --text-preview: 16px;
+    --text-preview-note: 14px;
+    --text-preview-initials: 15px;
+
+    --radius-card: 28px;
+  }
+}

@@ -1,0 +1,17 @@
+---
+import AppButton from "./AppButton.astro";
+---
+
+<section aria-labelledby="cta-title" class="mx-auto max-w-1440 px-22 pt-64 md:px-56 md:pt-120">
+  <div class="flex flex-col gap-28 md:grid md:grid-fit-460 md:items-end md:gap-x-64 md:gap-y-48">
+    <div class="flex flex-col gap-28 md:gap-40">
+      {/* The big "Ч" and "игабугадага" read as one word */}
+      <div role="img" aria-label="Чигабугадага" class="flex items-end gap-4 md:gap-8">
+        <div class="-ml-7 font-display text-letter font-black text-accent md:-ml-14">Ч</div>
+        <div class="text-wordmark font-medium">игабугадага</div>
+      </div>
+      <h2 id="cta-title" class="text-display font-light text-balance">Начните с одного человека</h2>
+    </div>
+    <AppButton />
+  </div>
+</section>

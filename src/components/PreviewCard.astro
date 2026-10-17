@@ -1,0 +1,39 @@
+---
+// Decorative picture of the app: a search field and a found contact.
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div
+  aria-hidden="true"
+  class:list={[
+    "flex flex-col gap-8 overflow-hidden rounded-card border border-card-border p-14 font-ui md:gap-10 md:p-18",
+    className,
+  ]}
+>
+  <div class="flex h-46 items-center gap-10 rounded-field bg-search px-14 text-preview md:h-50 md:px-16">
+    <div class="size-12 rounded-full border-2 border-search-icon"></div>
+    <span>петр иванов</span>
+  </div>
+  <div class="flex items-center gap-12 border-b border-search px-6 py-10">
+    <div
+      class="flex size-42 shrink-0 items-center justify-center rounded-full bg-avatar text-preview-initials font-semibold md:size-46"
+    >
+      ИП
+    </div>
+    <div class="flex flex-1 flex-col gap-2">
+      <div class="text-preview font-semibold">Иванов Пётр</div>
+      <div class="text-preview-note text-meta">Откуда знакомы · заметка</div>
+    </div>
+  </div>
+  <div class="flex items-center gap-12 px-6 py-10 opacity-45">
+    <div class="size-42 shrink-0 rounded-full bg-avatar-muted md:size-46"></div>
+    <div class="flex flex-1 flex-col gap-6">
+      <div class="h-10 w-3/5 rounded-full bg-skeleton"></div>
+      <div class="h-8 w-2/5 rounded-full bg-skeleton"></div>
+    </div>
+  </div>
+</div>

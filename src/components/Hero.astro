@@ -1,0 +1,26 @@
+---
+import { SITE_DESCRIPTION } from "../consts";
+import AppButton from "./AppButton.astro";
+import Header from "./Header.astro";
+import PreviewCard from "./PreviewCard.astro";
+
+// On mobile the first screen fills the viewport: the preview card stretches, the button stays at the bottom
+---
+
+<section
+  aria-labelledby="hero-title"
+  class="mx-auto flex min-h-svh max-w-1440 flex-col px-22 pt-22 pb-28 md:min-h-860 md:px-56 md:pt-28 md:pb-56"
+>
+  <Header />
+  <div class="flex grow flex-col md:grid md:grid-fit-460 md:items-end md:gap-x-64 md:gap-y-48 md:pt-48">
+    <div class="flex flex-col gap-18 pt-18 md:gap-32 md:pt-0">
+      <div aria-hidden="true" class="-ml-7 font-display text-letter font-black text-accent md:-ml-14">Ч</div>
+      <h1 id="hero-title" class="text-display font-light text-balance">Помните всех, кого знаете лично</h1>
+    </div>
+    <div class="flex grow flex-col md:gap-20">
+      <p class="mt-18 border-t border-ink pt-14 text-lead text-pretty md:mt-0 md:pt-16">{SITE_DESCRIPTION}</p>
+      <PreviewCard class="mt-18 grow md:mt-0" />
+      <AppButton class="mt-16 md:mt-0" />
+    </div>
+  </div>
+</section>

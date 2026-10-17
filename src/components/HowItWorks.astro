@@ -1,0 +1,30 @@
+---
+const steps = [
+  { title: "Откройте.", text: "Все ваши люди одним списком" },
+  { title: "Добавьте человека.", text: "Имя, откуда знакомы, телефон и почта" },
+  { title: "Поговорили?", text: "Найдите его по имени и допишите заметку" },
+];
+---
+
+<section
+  aria-labelledby="how-title"
+  class="mx-auto flex max-w-1440 flex-col gap-32 px-22 pt-56 pb-64 md:gap-48 md:px-56 md:pt-96 md:pb-120"
+>
+  <h2 id="how-title" class="border-t border-ink pt-14 text-h2 font-light md:pt-16">Как это работает</h2>
+  {/* Mobile: rows with lines between them. Desktop: three columns with vertical dividers. */}
+  <ol class="flex flex-col md:grid md:grid-cols-3 md:border-y md:border-ink">
+    {
+      steps.map((step, index) => (
+        <li class="flex border-t border-ink py-20 last:border-b md:flex-col md:gap-56 md:border-t-0 md:px-32 md:pt-32 md:pb-36 md:first:pl-0 md:last:border-b-0 md:last:pr-0 md:not-first:border-l">
+          <span aria-hidden="true" class="w-72 shrink-0 font-display text-step-number font-black text-accent md:w-auto">
+            {index + 1}
+          </span>
+          <div class="flex flex-col gap-6 md:gap-8">
+            <h3 class="text-step-title font-medium">{step.title}</h3>
+            <p class="text-step-text">{step.text}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>

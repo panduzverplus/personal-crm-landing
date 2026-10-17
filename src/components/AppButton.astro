@@ -1,0 +1,49 @@
+---
+import { APP_URL } from "../consts";
+
+interface Props {
+  size?: "lg" | "sm";
+  class?: string;
+}
+
+const { size = "lg", class: className } = Astro.props;
+const focus = "hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink";
+---
+
+{
+  size === "sm" ? (
+    <a
+      href={APP_URL}
+      class:list={[
+        "flex h-40 items-center gap-10 rounded-full bg-ink pr-8 pl-18 text-button-sm font-medium text-peach",
+        focus,
+        className,
+      ]}
+    >
+      <span>Открыть приложение</span>
+      <span
+        aria-hidden="true"
+        class="flex size-26 items-center justify-center rounded-full bg-peach text-button-sm-arrow text-ink"
+      >
+        →
+      </span>
+    </a>
+  ) : (
+    <a
+      href={APP_URL}
+      class:list={[
+        "flex h-64 items-center justify-between rounded-full bg-ink px-22 text-button font-medium text-peach md:h-72 md:pr-14 md:pl-28",
+        focus,
+        className,
+      ]}
+    >
+      <span>Открыть приложение</span>
+      <span
+        aria-hidden="true"
+        class="flex size-36 items-center justify-center rounded-full bg-peach text-button-arrow text-ink md:size-46"
+      >
+        →
+      </span>
+    </a>
+  )
+}

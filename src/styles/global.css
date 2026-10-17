@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* Design references are not part of the site */
+@source not "../../design";
+
+/*
+ * Columns at least N px wide that fold into one when they don't fit:
+ * grid-fit-460 = repeat(auto-fit, minmax(min(100%, 460px), 1fr)), as in the design.
+ */
+@utility grid-fit-* {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--spacing) * --value(integer))), 1fr));
+}
+
+@layer base {
+  /* The design relies on the browser's default line height */
+  html {
+    line-height: normal;
+  }
+}

@@ -1,0 +1,29 @@
+---
+import { Font } from "astro:assets";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const preload = [{ subset: "cyrillic" }];
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <Font cssVariable="--font-geologica" preload={preload} />
+    <Font cssVariable="--font-unbounded" preload={preload} />
+    <Font cssVariable="--font-onest" preload={preload} />
+    <Font cssVariable="--font-ibm-plex-mono" preload={preload} />
+  </head>
+  <body class="bg-peach text-ink antialiased">
+    <slot />
+  </body>
+</html>
